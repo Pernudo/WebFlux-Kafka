@@ -9,9 +9,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>02_microservice_reactive_names</artifactId>
-	<name>02_microservice_reactive_names</name>
-	<description>Demo Reactive MicroService</description>
+	<artifactId>03_microservice_crud_reactive_products</artifactId>
+	<name>03_microservice_crud_reactive_products</name>
+	<description>Demo Reactive MicroService Products</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

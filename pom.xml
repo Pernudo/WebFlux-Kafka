@@ -38,10 +38,28 @@
 		</dependency>
 	</dependencies>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 	<modules>
 		<module>00_webflux_kafka</module>
 		<module>01_microservice_crud_products</module>
 		<module>02_microservice_reactive_names</module>
+		<module>03_microservice_crud_reactive_products</module>
 	</modules>
 
 </project>

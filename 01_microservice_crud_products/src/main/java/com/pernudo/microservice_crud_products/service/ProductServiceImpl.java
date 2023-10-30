@@ -1,5 +1,6 @@
-package com.pernudo.microservice_crud_products.model;
+package com.pernudo.microservice_crud_products.service;
 
+import com.pernudo.microservice_crud_products.model.Product;
 import com.pernudo.microservice_crud_products.service.ProductService;
 import org.springframework.stereotype.Service;
 

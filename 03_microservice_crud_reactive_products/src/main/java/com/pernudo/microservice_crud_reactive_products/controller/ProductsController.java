@@ -3,7 +3,9 @@ package com.pernudo.microservice_crud_reactive_products.controller;
 import com.pernudo.microservice_crud_reactive_products.model.Product;
 import com.pernudo.microservice_crud_reactive_products.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -15,32 +17,36 @@ public class ProductsController {
     ProductService productService;
 
     @GetMapping(value = "products")
-    public Flux<Product> getProducts(){
-        return productService.listProducts();
+    public ResponseEntity<Flux<Product>> getProducts(){
+        return new ResponseEntity<>(productService.listProducts(), HttpStatus.OK);
     }
     @GetMapping(value = "products/{category}")
-    public Flux<Product> productsCategory (@PathVariable("category") String category){
-        return productService.listProductsByCategory(category);
+    public ResponseEntity<Flux<Product>> productsCategory (@PathVariable("category") String category){
+        return new ResponseEntity<>(productService.listProductsByCategory(category), HttpStatus.OK);
     }
 
     @GetMapping(value = "product")
-    public Mono<Product> productId(@RequestParam("id") int id){
-        return productService.productById(id);
+    public ResponseEntity<Mono<Product>> productId(@RequestParam("id") int id){
+        return new ResponseEntity<>(productService.productById(id), HttpStatus.OK);
     }
 
     @PostMapping(value = "save", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<Void> saveProduct(@RequestBody Product product){
-        return productService.saveProduct(product);
+    public ResponseEntity<Mono<Void>> saveProduct(@RequestBody Product product){
+        return new ResponseEntity<>(productService.saveProduct(product), HttpStatus.OK);
     }
 
     @PutMapping(value = "update")
-    public Mono<Product> updateProduct(@RequestParam("id") int id, @RequestParam("price") double price){
-        return productService.updatePrice(id, price);
+    public Mono<ResponseEntity<Product>> updateProduct(@RequestParam("id") int id, @RequestParam("price") double price){
+        return productService.updatePrice(id, price)//Mono<Product>
+                .map(p -> new ResponseEntity<>(p, HttpStatus.OK))//Mono<ResponseEntity<Product>>
+                .switchIfEmpty(Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));//Mono<ResponseEntity<Product>>
     }
 
     @DeleteMapping(value = "delete")
-    public Mono<Product> deleteProduct(@RequestParam("id") int id) {
-        return productService.deleteProduct(id);
+    public Mono<ResponseEntity<Product>> deleteProduct(@RequestParam("id") int id) {
+        return productService.deleteProduct(id)//Mono<Product>
+                .map(p -> new ResponseEntity<>(p, HttpStatus.OK))//Mono<ResponseEntity<Product>>
+                .switchIfEmpty(Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));//Mono<ResponseEntity<Product>>
     }
 
 }

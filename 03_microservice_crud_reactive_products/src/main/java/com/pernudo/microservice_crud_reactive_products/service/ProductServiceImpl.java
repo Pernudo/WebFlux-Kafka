@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Flux<Product> listProducts() {
         return Flux.fromIterable(lstProducts)//Flux<Product>
-                .delayElements(Duration.ofSeconds(2));//Flux<Product>
+                .delayElements(Duration.ofSeconds(1));//Flux<Product>
     }
 
     @Override

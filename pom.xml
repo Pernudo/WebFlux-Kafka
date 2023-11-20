@@ -60,6 +60,7 @@
 		<module>01_microservice_crud_products</module>
 		<module>02_microservice_reactive_names</module>
 		<module>03_microservice_crud_reactive_products</module>
+		<module>05_test_crud_reactive_products</module>
 	</modules>
 
 </project>

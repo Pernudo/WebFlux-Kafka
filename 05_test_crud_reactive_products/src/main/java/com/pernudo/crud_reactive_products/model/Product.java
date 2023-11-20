@@ -1,8 +1,7 @@
-package com.pernudo.microservice_crud_reactive_products.model;
+package com.pernudo.crud_reactive_products.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor

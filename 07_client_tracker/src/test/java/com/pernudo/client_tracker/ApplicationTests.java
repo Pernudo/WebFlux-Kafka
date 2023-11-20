@@ -1,10 +1,10 @@
-package com.pernudo.microservice_tracker;
+package com.pernudo.client_tracker;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MicroserviceCrudReactiveProductsTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {

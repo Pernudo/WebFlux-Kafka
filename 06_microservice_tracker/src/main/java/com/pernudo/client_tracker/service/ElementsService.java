@@ -1,6 +1,6 @@
-package com.pernudo.microservice_tracker.service;
+package com.pernudo.client_tracker.service;
 
-import com.pernudo.microservice_tracker.model.Element;
+import com.pernudo.client_tracker.model.Element;
 import reactor.core.publisher.Flux;
 
 public interface ElementsService {

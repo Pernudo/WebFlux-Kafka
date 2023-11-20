@@ -1,6 +1,6 @@
-package com.pernudo.microservice_tracker.service;
+package com.pernudo.client_tracker.service;
 
-import com.pernudo.microservice_tracker.model.Element;
+import com.pernudo.client_tracker.model.Element;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;

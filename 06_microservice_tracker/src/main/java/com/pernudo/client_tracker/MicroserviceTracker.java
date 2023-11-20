@@ -1,4 +1,4 @@
-package com.pernudo.microservice_tracker;
+package com.pernudo.client_tracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

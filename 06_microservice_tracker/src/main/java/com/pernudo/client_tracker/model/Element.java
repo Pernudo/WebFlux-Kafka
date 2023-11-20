@@ -1,4 +1,4 @@
-package com.pernudo.microservice_tracker.model;
+package com.pernudo.client_tracker.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

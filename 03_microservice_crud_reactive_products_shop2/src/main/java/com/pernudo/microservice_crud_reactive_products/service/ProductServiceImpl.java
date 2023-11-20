@@ -14,7 +14,7 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
 
     private static final List<Product> lstProducts=new ArrayList<>(List.of(
-            new Product(100,"Azucar","Alimentación",1.10,20),
+            new Product(100,"Azúcar","Alimentación",1.10,20),
             new Product(111,"Pan","Alimentación",1.3,10),
             new Product(112,"Esponja","Limpieza",2,20),
             new Product(113,"Sofá","Hogar",80,4),

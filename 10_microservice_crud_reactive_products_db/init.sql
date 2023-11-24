@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS products (
     category VARCHAR(50),
     price DOUBLE,
     stock INT
-)DEFAULT CHARSET=utf8;
+);
 
 INSERT INTO products VALUES (100,'Azúcar','Alimentación',1.10,20);
 INSERT INTO products VALUES (101,'Leche','Alimentación',1.20,15);

@@ -68,6 +68,7 @@
 		<module>07_client_tracker</module>
 		<module>08_microservice_crud_reactive_products_securized</module>
 		<module>09_microservice_tracker_securized_access</module>
+		<module>10_microservice_crud_reactive_products_db</module>
 	</modules>
 
 </project>

@@ -6,11 +6,11 @@ CREATE TABLE IF NOT EXISTS products (
     stock INT
 );
 
-INSERT INTO products VALUES (100,'Azúcar','Alimentación',1.10,20);
-INSERT INTO products VALUES (101,'Leche','Alimentación',1.20,15);
-INSERT INTO products VALUES (102,'Jabón','Limpieza',0.89,30);
+INSERT INTO products VALUES (100,_utf8'Azúcar',_utf8'Alimentación',1.10,20);
+INSERT INTO products VALUES (101,'Leche',_utf8'Alimentación',1.20,15);
+INSERT INTO products VALUES (102,_utf8'Jabón','Limpieza',0.89,30);
 INSERT INTO products VALUES (103,'Mesa','Hogar',125,4);
-INSERT INTO products VALUES (104,'Televisión','Hogar',650,10);
-INSERT INTO products VALUES (105,'Huevos','Alimentación',2.20,30);
+INSERT INTO products VALUES (104,_utf8'Televisión','Hogar',650,10);
+INSERT INTO products VALUES (105,'Huevos',_utf8'Alimentación',2.20,30);
 INSERT INTO products VALUES (106,'Fregona','Limpieza',3.40,6);
 INSERT INTO products VALUES (107,'Detergente','Limpieza',8.7,12);

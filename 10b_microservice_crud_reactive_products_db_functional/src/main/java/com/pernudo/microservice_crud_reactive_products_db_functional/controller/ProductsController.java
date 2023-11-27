@@ -58,6 +58,7 @@ public class ProductsController {
                     .bodyValue(product) //Mono<ServerResponse>
                 )
                 .switchIfEmpty(ServerResponse.status(HttpStatus.NOT_FOUND) //BodyBuilder
+                    .contentType(MediaType.TEXT_EVENT_STREAM)
                     .build() //Mono<ServerResponse>
                 )
         )//RouterFunction<ServerResponse>
@@ -65,7 +66,7 @@ public class ProductsController {
             request -> productService.updatePrice(
                             request.queryParam("id").map(Integer::parseInt).get(),
                             request.queryParam("price").map(Double::parseDouble).get()) //Mono<Producto>
-                .flatMap(product -> ServerResponse.ok()
+                .flatMap(product -> ServerResponse.ok() //BodyBuilder
                         .contentType(MediaType.TEXT_EVENT_STREAM)
                         .bodyValue(product) //Mono<ServerResponse>
                 )

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+
+  mySQL:
+    image: mysql
+    restart: always
+    container_name: my_db
+    environment:
+      MYSQL_DATABASE: Web_Flux
+      MYSQL_ROOT_PASSWORD: Web_Flux3306
+    ports:
+      - 3306:3306
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql

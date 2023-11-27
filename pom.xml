@@ -72,6 +72,7 @@
 		<module>10_microservice_crud_reactive_products_db</module>
 		<module>10b_microservice_crud_reactive_products_db_functional</module>
 		<module>11_app_producer</module>
+		<module>12_app_consumer</module>
 	</modules>
 
 </project>

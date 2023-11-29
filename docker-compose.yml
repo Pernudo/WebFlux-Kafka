@@ -32,10 +32,27 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
       KAFKA_LISTENERS: INSIDE://0.0.0.0:9092,OUTSIDE://0.0.0.0:9093
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      #KAFKA_MESSAGE_MAX_BYTES: 10000000
+      #KAFKA_SOCKET_REQUEST_MAX_BYTES: 100001200
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPICS: "topic_test:1:1"
+      KAFKA_CREATE_TOPICS: "topic_test:1:1,topic_test2:1:1"
+    #volumes:
+      #- /var/run/docker.sock:/var/run/docker.sock
     networks:
       - kafka-net
+
+  kafdrop:
+    image: obsidiandynamics/kafdrop
+    restart: "no"
+    ports:
+      - "9000:9000"
+    environment:
+      KAFKA_BROKERCONNECT: "kafka:9092"
+    depends_on:
+      - "kafka"
+    networks:
+      - kafka-net
+
 networks:
   kafka-net:
     driver: bridge

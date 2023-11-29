@@ -1,8 +1,10 @@
 package com.pernudo.app_consumer.components;
 
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.common.serialization.StringDeserializer;
 
 import java.time.Duration;
 import java.util.List;
@@ -22,7 +24,9 @@ public class Consumer {
 
     public void suscribe(String topic){
         consumer.subscribe(List.of(topic));
+        int i = 0;
         while(true){
+            System.out.println("Dentro del bucle del consumidor "+ i++ +"!!!");
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofSeconds(1));
             for(ConsumerRecord<String, String> record : records){
                 System.out.println(record.value());

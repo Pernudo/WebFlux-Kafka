@@ -11,7 +11,7 @@ public class LauncherProducer {
         Producer producer = new Producer();
         for (int i=1; i<=10; i++){
             System.out.println("Dentro del bucle del productor "+ i +"!!!");
-            producer.send("topic_test", "Mensaje generado a las " + LocalDateTime.now() + "para topic_test");
+            producer.send("topicTest", "Mensaje generado a las " + LocalDateTime.now() + "para topic_test");
             Thread.sleep(500);
         }
         producer.close();

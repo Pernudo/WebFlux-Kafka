@@ -1303,6 +1303,62 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "13_microservice_orders_producer",
+			"item": [
+				{
+					"name": "04_save",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/event-stream",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProduct\": 101,\r\n    \"name\": \"Pedido de Leche\",\r\n    \"units\": 5,\r\n    \"address\": \"Calle de Ferraz, 70, 28008 Madrid\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_13}}/save",
+							"host": [
+								"{{url_13}}"
+							],
+							"path": [
+								"save"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -1358,6 +1414,11 @@
 		{
 			"key": "url_10",
 			"value": "http://localhost:8090",
+			"type": "string"
+		},
+		{
+			"key": "url_13",
+			"value": "http://localhost:8093",
 			"type": "string"
 		}
 	]

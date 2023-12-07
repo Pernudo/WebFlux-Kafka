@@ -75,6 +75,7 @@
 		<module>12_app_consumer</module>
 		<module>13_microservice_orders_producer</module>
 		<module>14_microservice_orders_consumer</module>
+		<module>15_microservice_shippings_consumer</module>
 	</modules>
 
 </project>

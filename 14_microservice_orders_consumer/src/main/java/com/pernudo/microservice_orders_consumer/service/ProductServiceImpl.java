@@ -70,11 +70,4 @@ public class ProductServiceImpl implements ProductService {
                 }) //Mono<Product>
                 .subscribe();
     }
-
-    //To avoid the error JsonDeserializer between com.pernudo.microservice_orders_producer.model.Order and com.pernudo.microservice_orders_consumer.model.Order
-    @Bean
-    public StringJsonMessageConverter jsonConverter() {
-        return new StringJsonMessageConverter();
-    }
-
 }

@@ -1,7 +1,7 @@
-package com.pernudo.microservice_crud_reactive_products_db.service;
+package com.pernudo.microservice_crud_reactive_products_db_mongodb.service;
 
-import com.pernudo.microservice_crud_reactive_products_db.model.Product;
-import com.pernudo.microservice_crud_reactive_products_db.repository.ProductsRepository;
+import com.pernudo.microservice_crud_reactive_products_db_mongodb.model.Product;
+import com.pernudo.microservice_crud_reactive_products_db_mongodb.repository.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

@@ -58,7 +58,6 @@
 	</build>
 
 	<modules>
-		<module>00_webflux_kafka</module>
 		<module>01_microservice_crud_products</module>
 		<module>02_microservice_reactive_names</module>
 		<module>02b_microservice_reactive_names_functional</module>
